@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import { QuioscoProvider } from 'context/QuiscoProvider';
+import { QuioscoProvider } from 'context/QuioscoProvider';
 
 function MyApp({ Component, pageProps }) {
 	return (
