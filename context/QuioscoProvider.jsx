@@ -46,6 +46,7 @@ const QuioscoProvider = ({ children }) => {
 		} else {
 			setPedido([...pedido, producto]);
 		}
+		setModal(false);
 	};
 
 	return (
@@ -59,6 +60,7 @@ const QuioscoProvider = ({ children }) => {
 				modal,
 				handleChangeModal,
 				handleAgregarPedido,
+				pedido,
 			}}
 		>
 			{children}
