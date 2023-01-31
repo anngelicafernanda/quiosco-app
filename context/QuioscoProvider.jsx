@@ -79,8 +79,17 @@ const QuioscoProvider = ({ children }) => {
 
 	const colocarOrden = async (e) => {
 		e.preventDefault();
-		console.log(pedido);
-		console.log(nombre);
+		try {
+			const { data } = await axios.post('/api/ordenes', {
+				pedido,
+				nombre,
+				total,
+				fecha: Date.now().toString(),
+			});
+			console.log(data);
+		} catch (error) {
+			console.log(error);
+		}
 	};
 
 	return (
