@@ -3,7 +3,7 @@ import useQuiosco from 'hooks/useQuiosco';
 import Image from 'next/image';
 
 const ResumenProducto = ({ producto }) => {
-	const { handleEditarCantidades } = useQuiosco();
+	const { handleEditarCantidades, handleEliminarProducto } = useQuiosco();
 	return (
 		<div className="shadow p-5 mb-3 flex gap-10 items-center">
 			<div className="md:w-1/6">
@@ -47,6 +47,9 @@ const ResumenProducto = ({ producto }) => {
 				<button
 					type="button"
 					className="bg-red-700 flex px-5 py-2 gap-2 text-white rounded-md font-bold uppercase shadow-md w-full mt-3"
+					onClick={() => {
+						handleEliminarProducto(producto.id);
+					}}
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
