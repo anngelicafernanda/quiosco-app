@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import { ToastContainer } from 'react-toastify';
 import Sidebar from 'components/sidebar';
 import ModalProducto from 'components/ModalProducto';
+import Pasos from 'components/Pasos';
 import useQuiosco from 'hooks/useQuiosco';
 
 import 'react-toastify/dist/ReactToastify.css';
@@ -34,7 +35,10 @@ export default function Layout({ children, pagina }) {
 					<Sidebar />
 				</aside>
 				<main className="md:w-8/12 xl:w-3/4 2xl:w-4/5 h-screen overflow-y-scroll">
-					<div className="p-10">{children}</div>
+					<div className="p-10">
+						<Pasos />
+						{children}
+					</div>
 				</main>
 			</div>
 			{modal && (
