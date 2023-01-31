@@ -3,11 +3,11 @@ import useQuiosco from 'hooks/useQuiosco';
 import Layout from 'layout/Layout';
 
 export default function Total() {
-	const { pedido } = useQuiosco();
+	const { pedido, nombre, setNombre } = useQuiosco();
 
 	const comprobarPedido = useCallback(() => {
-		return pedido.length === 0;
-	}, [pedido]);
+		return pedido.length === 0 || nombre === '' || nombre.length < 3;
+	}, [pedido, nombre]);
 
 	useEffect(() => {
 		comprobarPedido();
@@ -34,6 +34,8 @@ export default function Total() {
 						id="nombre"
 						type="text"
 						className="bg-gray-200 w-full mt-3 lg:w-1/3 p-2 rounded-md"
+						value={nombre}
+						onChange={(e) => setNombre(e.target.value)}
 					/>
 				</div>
 				<div className="mt-10">
