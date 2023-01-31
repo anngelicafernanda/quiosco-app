@@ -87,6 +87,17 @@ const QuioscoProvider = ({ children }) => {
 				pedido,
 			});
 			console.log(data);
+			//resetear app
+
+			setCategoriaActual(categorias[0]);
+			setPedido([]);
+			setNombre('');
+			setTotal(0);
+
+			toast.success('Pedido Realizado Correctamente');
+			setTimeout(() => {
+				router.push('/');
+			}, 3000);
 		} catch (error) {
 			console.log(error);
 		}
