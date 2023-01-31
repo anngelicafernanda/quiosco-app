@@ -81,10 +81,10 @@ const QuioscoProvider = ({ children }) => {
 		e.preventDefault();
 		try {
 			const { data } = await axios.post('/api/ordenes', {
-				pedido,
 				nombre,
-				total,
 				fecha: Date.now().toString(),
+				total,
+				pedido,
 			});
 			console.log(data);
 		} catch (error) {
