@@ -3,6 +3,11 @@ import { formatearDinero } from '../helpers/index';
 
 export default function Orden({ orden }) {
 	const { id, nombre, total, pedido } = orden;
+
+	const completarOrden = () => {
+		console.log('completando...', id);
+	};
+
 	return (
 		<div className="border p-10 space-y-5">
 			<h3 className="text-2xl font-black">Orden: {id}</h3>
@@ -34,6 +39,13 @@ export default function Orden({ orden }) {
 				<p className="mt-5 font-black text-4xl text-amber-500">
 					Total a pagar:{formatearDinero(total)}
 				</p>
+				<button
+					onClick={completarOrden}
+					type="button"
+					className="bg-indigo-600 hover:bg-indigo-800 text-white mt-5 md:mt-0 py-3 px-10 uppercase font-bold rounded-lg"
+				>
+					Completar Orden
+				</button>
 			</div>
 		</div>
 	);
