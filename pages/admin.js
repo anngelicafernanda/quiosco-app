@@ -11,7 +11,7 @@ export default function admin() {
 	// console.log('🚀  isLoading', isLoading);
 	return (
 		<AdminLayout pagina={'Admin'}>
-			<h1 className="text-4xl font-black">panel de Administracion</h1>
+			<h1 className="text-4xl font-black">Panel de Administracion</h1>
 			<p className="text-2xl my-10">Administra las Ordenes</p>
 			{data && data.length ? (
 				data.map((orden) => <Orden key={orden.id} orden={orden} />)
